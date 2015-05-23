@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  get 'admin/home' => 'admin#home'
+
   resources :leads
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
  get 'services' => 'pages#services'
  get 'contact'=>'pages#contact'
  get 'thanks'=>'pages#thanks'
+  get 'new-patient'=>'pages#new-patient'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

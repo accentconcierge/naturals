@@ -1,9 +1,8 @@
-class LeadsController < ApplicationController
-  before_action :set_lead, only: [:show, :edit, :update, :destroy]
-   before_filter :authenticate_admin!, only: [:index, :show, :edit, :update, :destroy]
-  # GET /leads
-  # GET /leads.json
-  def index
+class AdminController < ApplicationController
+	before_action :authenticate_admin! 
+  def home
+  end
+   def index
     @leads = Lead.all
   end
 
@@ -72,3 +71,4 @@ class LeadsController < ApplicationController
       params.require(:lead).permit(:first_name, :last_name, :phone, :email)
     end
 end
+

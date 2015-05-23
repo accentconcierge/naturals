@@ -1,25 +1,48 @@
+
 <center>
 <h1> Contact Us</h1>
 </center>
+<br><br><br>
+<div class = 'container col-md-6 rt'>
+<center>
+
+
 <%= form_for(@lead) do |f| %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
+        <div class="field">
+          <%= f.label :first_name %><br>
+          <%= f.text_field :first_name %>
+        </div>
+    
+                <br><br>
+    
+        <div class="field">
+          <%= f.label :last_name %><br>
+          <%= f.text_field :last_name %>
+        </div>
+    
+                <br><br>
+
   <div class="field">
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
-  </div>
+  </div><br><br>
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
-  </div>
+  </div><br><br>
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </div><br><br>
   <div class="actions">
     <%= f.submit 'Send', class: 'button' %>
-  </div>
+  </div><br><br>
 <% end %>
+</div>
+
+</center>
+<div class='contianer col-md-6 lt'>
+
+<p class ='t'> Call: <b> (404) 724-5424</b><br><br>Email: <b>naturaltherapeuticsatl@gmail.com</b></p>
+  </div>

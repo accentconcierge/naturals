@@ -21,17 +21,29 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-   
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
+   <ul class="nav navbar-nav navbar-right">
+     <% if admin_signed_in? %>
+        <li><%=link_to 'Home',  admin_home_path %></li>
+        <li><%=link_to 'Leads',  leads_path %></li>
+        <li><%=link_to 'Sign Out',  destroy_admin_session_path, method: :delete %></li>
+    <%else%>
+      <li><a href="/">Home</a></li>
         <li><a href="/services">Learn</a></li>
-        <li><a href="#">New Patient</a></li>
+        <li><a href="/new-patient">New Patient</a></li>
         <li><a href="/contact">Contact Us</a></li>
-      </ul>
+    <%end%>
+     </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+  
+
+
 <%= yield %>
 
 </body>
+
+
+
+  
 </html>
